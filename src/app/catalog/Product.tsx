@@ -1,14 +1,18 @@
 import { Product as ProductProps } from "../types/Product";
+import Image from "next/image";
 
-const Product: React.FC<ProductProps> =({name, price, image}) => {
-
+const Product: React.FC<ProductProps> =({name, price, image, code}) => {
+  
+  
   return (
     <li className="w-full max-w-sm bg-white rounded-lg shadow-sm ">
-      <a href="#">
-        <img
-          className="p-8 rounded-t-lg"
+      <a href={`detail/product?id=${code}`}>
+        <Image
           src={image}
           alt="Producto"
+          width={300}
+          height={300}
+          className="p-8 rounded-t-lg"
         />
       </a>
       <button className="w-full relative inline-flex items-center justify-center p-0.5 mb-2 me-2 border-[1px] border-black overflow-hidden text-sm font-medium text-gray-900 group hover:bg-blue-700 hover:border-blue-700 hover:text-white">
