@@ -1,7 +1,10 @@
+"use client" 
+
+import { useState } from "react";
 import Catalog from "./catalog/Catalog";
-import Header from "./components/Header";
 import * as PRODUCT_LIST from './data.json';
 import { Product } from "./types/Product";  
+import Search from "./[...search]/page";
 
 const products: Product[] = PRODUCT_LIST.map(item => ({
   code: item.codpro,
@@ -10,11 +13,15 @@ const products: Product[] = PRODUCT_LIST.map(item => ({
   image: item.imagen
 }));
 
+
 export default function Home() {
+
+  const [productList, setProductList] = useState<Product[]>(products);
+
   return (
     <>
-      <Header/>
-      <Catalog products={products} />
+      <Catalog products={productList} />
+      <Search  />
     </>
     
   );
