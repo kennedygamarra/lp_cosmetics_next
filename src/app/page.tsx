@@ -1,6 +1,6 @@
 "use client" 
 
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import Catalog from "./catalog/Catalog";
 import { Product } from "./types/Product";  
 import Search from "./[...search]/page";
@@ -12,8 +12,12 @@ export default function Home() {
 
   return (
     <>
-      <Catalog products={productList} />
-      <Search  />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Catalog products={productList} />
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Search  />
+      </Suspense>
     </>
     
   );
