@@ -1,7 +1,7 @@
 "use client"
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
-import { products } from "../../dataUtils";
+import { products } from "../../types/dataUtils";
 
 export default function Detail() {
   const searchParams = useSearchParams()

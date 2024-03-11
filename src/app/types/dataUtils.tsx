@@ -1,5 +1,5 @@
-import * as PRODUCT_LIST from './types/data.json';
-import { Product as ProductType } from "./types/Product";
+import * as PRODUCT_LIST from './data.json';
+import { Product as ProductType } from "./Product";
 
 export const products: ProductType[] = PRODUCT_LIST.map(item => ({
   code: item.codpro,

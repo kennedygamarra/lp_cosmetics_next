@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Product as ProductType } from "../types/Product";
 import Product from "../catalog/Product";
 import { useSearchParams } from "next/navigation";
-import { products } from "../dataUtils";
+import { products } from "../types/dataUtils";
 
 export default function Search() {
   const searchParams = useSearchParams();
