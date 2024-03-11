@@ -6,6 +6,7 @@ interface CatalogProps {
 }
 
 export default function Catalog({products}: CatalogProps) {
+  console.log("LISTA DE PRODUCTOS", products);
   return (
     <ul className="flex flex-col gap-x-6">
       <div className="content-container px-2 py-12 small:py-24">
