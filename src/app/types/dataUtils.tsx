@@ -1,6 +1,8 @@
 import * as PRODUCT_LIST from './data.json';
 import { Product as ProductType } from "./Product";
 
+console.log("PRODUCT_LIST",PRODUCT_LIST);
+
 export const products: ProductType[] = PRODUCT_LIST.map(item => ({
   code: item.codpro,
   name: item.nombre,
@@ -11,6 +13,6 @@ export const products: ProductType[] = PRODUCT_LIST.map(item => ({
 //Up the price of the products
  function  increasePrice(precio: any) {
   const nuevoPrecio = precio * 1.7;
-  // Redondear a la cifra más cercana en cienes
+  // Round to the nearest 100
   return Math.round(nuevoPrecio / 100) * 100;
 }
