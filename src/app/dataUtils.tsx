@@ -1,4 +1,4 @@
-import * as PRODUCT_LIST from './data.json';
+import * as PRODUCT_LIST from './types/data.json';
 import { Product as ProductType } from "./types/Product";
 
 export const products: ProductType[] = PRODUCT_LIST.map(item => ({
