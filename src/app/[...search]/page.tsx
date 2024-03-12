@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Product as ProductType } from "../types/Product";
 import Product from "../catalog/Product";
 import { useSearchParams } from "next/navigation";
@@ -9,14 +9,16 @@ import { products } from "../types/dataUtils";
 export default function Search() {
   const searchParams = useSearchParams();
   const query = searchParams.get("q");
+  const [productList, setProductList] = useState<ProductType[]>([]);
 
-  const productsSearch: any = products.filter((product) => {
-    return product.name
-      .toLowerCase()
-      .includes(query ? query.toLowerCase() : "");
-  });
-
-  const [productList, setProductList] = useState<ProductType[]>(productsSearch);
+  useEffect(() => {
+    const productsSearch: any = products.filter((product) => {
+      return product.name
+        .toLowerCase()
+        .includes(query ? query.toLowerCase() : "");
+    });
+    setProductList(productsSearch);
+  },[query])
 
   return (
     <>
