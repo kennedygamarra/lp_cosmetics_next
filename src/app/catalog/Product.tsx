@@ -34,10 +34,10 @@ const Product: React.FC<ProductProps> =({name, price, image, code}) => {
       <a href={`detail/product?id=${code}`}>
         <Image
           src={image}
-          alt="Producto"
+          alt={name}
           width={300}
           height={300}
-          className="p-8 rounded-t-lg"
+          className="p-2 md:p-4 rounded-t-lg"
           onLoad={handleImageLoaded}
           priority={true}
           />
@@ -49,12 +49,12 @@ const Product: React.FC<ProductProps> =({name, price, image, code}) => {
       </button> */}
       <div className="px-5 pb-5 ">
         <a href="#">
-          <p className="text-sm font-semibold tracking-tight text-gray-900">
+          <p className="text-xs font-semibold tracking-tight text-gray-900">
             {name}
           </p>
         </a>
         <div className="flex items-center justify-between mt-4">
-          <span className="font-medium text-gray-600">${price}</span>
+          <span className="font-normal text-gray-600">$ {price}</span>
         </div>
       </div>
     </li>
